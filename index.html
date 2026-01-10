@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מקום לגדול בו</title>
+    <title>מיתר מקום לגדול בו</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         * { box-sizing: border-box; }
@@ -22,7 +22,7 @@
             justify-content: center; 
             min-height: 100vh; 
             padding: 20px; 
-            padding-bottom: 80px; /* מרווח כדי שהפוטר לא יסתיר תוכן */
+            padding-bottom: 80px; 
             color: white; 
             text-align: center; 
         }
@@ -48,9 +48,9 @@
         .modal-content { background: white; width: 100%; max-width: 700px; padding: 35px; border-radius: 12px; position: relative; margin: 40px auto; text-align: right; line-height: 1.6; color: #333; }
         .close-btn { float: left; font-size: 2.5rem; cursor: pointer; color: #999; line-height: 1; }
         
-        /* כותרות ללא פס צהוב תחתון */
         h2 { color: #4A6741; padding-bottom: 5px; margin-top: 0; border-bottom: none; }
         h3 { color: #4A6741; margin: 25px 0 10px 0; font-size: 1.3rem; }
+        h4 { color: #4A6741; margin: 15px 0 5px 0; font-size: 1.1rem; }
         
         .form-info-box { background: #fde68a; padding: 15px; border-radius: 6px; font-weight: bold; margin-bottom: 20px; font-size: 0.95rem; }
         .form-group { margin-bottom: 15px; }
@@ -68,14 +68,13 @@
         .footer-contact { margin-top: 30px; font-size: 1.1rem; margin-bottom: 20px; }
         .footer-contact a { color: white; text-decoration: none; }
         
-        /* עיצוב הפס האפור לזכויות יוצרים */
         .copyright { 
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #333; /* צבע אפור כהה */
-            color: #ddd;            /* טקסט בהיר */
+            background-color: #333;
+            color: #ddd;
             text-align: center; 
             padding: 15px 0;
             font-size: 0.85rem; 
@@ -93,11 +92,11 @@
 
     <div class="content">
         <img src="logo.png" alt="לוגו מיתר" class="site-logo">
-        <h1 class="main-title">מיתר – בית חינוך ברוח דיאלוגית</h1>
+        <h1 class="main-title">מיתר בית חינוך ברוח דיאלוגית</h1>
         <p class="sub-title">נפתחה ההרשמה לשנת תשפ"ז</p>
         
         <div class="btn-container">
-            <button class="action-btn btn-green" onclick="toggleModal('form', true)">להרשמה לימים הפתוחים</button>
+            <button class="action-btn btn-green" onclick="toggleModal('form', true)">פרטים אישיים והרשמה לימים הפתוחים</button>
             <button class="action-btn btn-light" onclick="toggleModal('about', true)">על מיתר</button>
             <button class="action-btn btn-light" onclick="toggleModal('process', true)">תהליך ההרשמה</button>
         </div>
@@ -114,13 +113,20 @@
             <span class="close-btn" onclick="toggleModal('about', false)">&times;</span>
             <h2>על מיתר</h2>
             <p>החזון החינוכי של מיתר הוא להיות בית חינוך מוביל ומעורר השראה, התומך במסע הגדילה של בני אדם מתוך חירות, אחריות, שמחה ומפגש.</p>
-            <p>מיתר נתפס כבית וכמרחב חיים. הפעילות מגוונת וכוללת: משחק, יצירה, עבודה, למידה, טיול, התנסות, בישול, בנייה, נגינה ועוד.</p>
+            <p>מיתר נתפס כבית וכמרחב חיים. הפעילות במיתר מגוונת וכוללת: משחק, יצירה, עבודה, למידה, טיול, התנסות, בישול, בנייה, נגינה ועוד.</p>
+            <p>חלק מהפעילות מובנה ומתוכנן, וחלקה ספונטני – מתוך זרימת החיים והבחירה.</p>
+            <p>למידה מתקיימת בכל מרחבי החיים במיתר, ונתמכת בדרכים רבות – לא בהכרח במסגרת לימוד פרונטלית או מובנית.</p>
+            
             <h3>מבנה בית החינוך</h3>
+            <p>מיתר מחולק לשלוש חטיבות:</p>
             <ul>
                 <li><strong>החטיבה הצעירה</strong> – גילאי 6–8 (כולל "הדולפינה" לגילאי 6)</li>
                 <li><strong>החטיבה היסודית</strong> – גילאי 8–11</li>
                 <li><strong>חטיבת הנעורים</strong> – גילאי 11–14</li>
             </ul>
+            <p>לכל חטיבה צוות חינוכי קבוע המוביל את הפעילות, מרכז את הקשר עם הילדים וההורים, ומלווה כל ילד באופן אישי.</p>
+            <p>לכל ילד חונך אישי, הפוגש אותו בתחילת ובסיום היום, מלווה את תהליך ההתפתחות ושומר על קשר רציף עם ההורים.</p>
+            <p><strong>מטרת הימים הפתוחים היא לאפשר לכם להבין לעומק מהי מיתר, כיצד נראים החיים בה, ובמה היא שונה מבית ספר רגיל.</strong></p>
         </div>
     </div>
 
@@ -128,11 +134,27 @@
         <div class="modal-content">
             <span class="close-btn" onclick="toggleModal('process', false)">&times;</span>
             <h2>תהליך ההרשמה</h2>
-            <p>שימו לב: למעט יום ההיכרות של כיתות ז'–ח', ערבי ההיכרות והסיורים מיועדים להורים בלבד, ללא ילדים.</p>
+            <p><strong>שימו לב:</strong> למעט יום ההיכרות של כיתות ז'–ח', ערבי ההיכרות והסיורים מיועדים להורים בלבד, ללא ילדים.</p>
+            
             <h4>הרשמה לכיתה א'</h4>
             <ul>
                 <li>שני ההורים נדרשים להשתתף בערב היכרות אחד במיתר.</li>
                 <li>במידה ויש רצון להמשיך בתהליך ולהשתתף בהגרלה – לפחות אחד מההורים נדרש להגיע לסיור בוקר במיתר.</li>
+                <li>ההרשמה לסיורים תיפתח לאחר ההשתתפות בערב ההיכרות.</li>
+            </ul>
+
+            <h4>הרשמה לכיתות ב'–ו'</h4>
+            <ul>
+                <li>נדרשת השתתפות של אחד ההורים בערב היכרות אחד.</li>
+                <li>הקבלה מתבצעת על בסיס מקום פנוי.</li>
+                <li>במידה ומתפנה מקום, נערכת הגרלה בין הפונים.</li>
+                <li>משפחה שתעלה בהגרלה תוזמן לפגישה אישית ולסיור במיתר.</li>
+            </ul>
+
+            <h4>הרשמה לכיתות ז'–ח'</h4>
+            <ul>
+                <li>ייערך יום פתוח משותף להורים ולילדים ביום ו', 6.2.</li>
+                <li>ההשתתפות ביום זה מהווה תנאי להשתתפות בהגרלה.</li>
             </ul>
         </div>
     </div>
