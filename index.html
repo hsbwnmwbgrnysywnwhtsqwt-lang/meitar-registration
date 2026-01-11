@@ -92,11 +92,11 @@
 
     <div class="content">
         <img src="logo.png" alt="לוגו מיתר" class="site-logo">
-        <h1 class="main-title">מיתר-בית חינוך ברוח דיאלוגית</h1>
+        <h1 class="main-title">מיתר בית חינוך ברוח דיאלוגית</h1>
         <p class="sub-title">נפתחה ההרשמה לשנת תשפ"ז</p>
         
         <div class="btn-container">
-            <button class="action-btn btn-green" onclick="toggleModal('form', true)">הרשמה לערבי הכרות</button>
+            <button class="action-btn btn-green" onclick="toggleModal('form', true)">פרטים אישיים והרשמה לימים הפתוחים</button>
             <button class="action-btn btn-light" onclick="toggleModal('about', true)">על מיתר</button>
             <button class="action-btn btn-light" onclick="toggleModal('process', true)">תהליך ההרשמה</button>
         </div>
@@ -196,6 +196,7 @@
                         <option value="19/1/25">19/1/25 יום ב' בשעה 20:00</option>
                         <option value="28/1/25">28/1/25 יום ד' בשעה 20:00</option>
                         <option value="2/2/25">2/2/25 יום ב' בשעה 20:00</option>
+                        <option value="לא רלוונטי">לא רלוונטי</option>
                     </select>
                 </div>
 
@@ -204,6 +205,7 @@
                     <select name="dateBtoV">
                         <option value="">בחירה</option>
                         <option value="4/2/25">4/2/25 יום ד' בשעה 20:00</option>
+                        <option value="לא רלוונטי">לא רלוונטי</option>
                     </select>
                 </div>
 
@@ -212,7 +214,7 @@
                     <select name="dateZtoH">
                         <option value="">בחירה</option>
                         <option value="6/2/25">6/2/25 יום ו' בשעה 9:00</option>
-
+                        <option value="לא רלוונטי">לא רלוונטי</option>
                     </select>
                 </div>
 
@@ -286,12 +288,12 @@
             const formData = new URLSearchParams(new FormData(form));
             fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
             .then(() => {
-                alert("תודה! ההרשמה נשלחה בהצלחה.");
+                // העברה לדף אישור הרשמה במקום הודעת alert
+                window.location.href = 'reg_confirmation.html';
                 form.reset();
-                toggleModal('form', false);
             })
-            .catch(() => alert("שגיאה בשליחה."))
-            .finally(() => {
+            .catch(() => {
+                alert("שגיאה בשליחה.");
                 btn.disabled = false;
                 btn.textContent = 'שלח הרשמה';
             });
