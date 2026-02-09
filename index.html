@@ -109,12 +109,11 @@
     <div class="content">
         <img src="logo.png" alt="לוגו מיתר" class="site-logo">
         <h1 class="main-title">מיתר בית חינוך ברוח דיאלוגית</h1>
-        <p class="sub-title">נפתחה ההרשמה לשנת תשפ"ז</p>
+        <p class="sub-title">ההרשמה למיתר לשנת תשפ"ז - הסתיימה.<br>מוזמנים למלא פרטים, ובמידה ותהיה אפשרות רלוונטית - נהיה איתכם בקשר</p>
         
         <div class="btn-container">
-            <button class="action-btn btn-green" onclick="toggleModal('form', true)">להרשמה לערבי הכרות</button>
+            <a class="action-btn btn-green" href="https://docs.google.com/forms/d/e/1FAIpQLSdyahDHeVpMP59sHogcxyWb4y4fhRuOR2xkos-wMPdgM8CB3g/viewform" target="_blank">למילוי פרטים</a>
             <button class="action-btn btn-light" onclick="toggleModal('about', true)">על מיתר</button>
-            <button class="action-btn btn-light" onclick="toggleModal('process', true)">תהליך ההרשמה</button>
         </div>
 
         <div class="footer-contact">
@@ -146,101 +145,7 @@
         </div>
     </div>
 
-    <div id="modal-process" class="modal-container" onclick="handleBackdropClick(event, 'process')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleModal('process', false)">&times;</span>
-            <h2>תהליך ההרשמה</h2>
-            <p><strong>שימו לב:</strong> למעט יום ההיכרות של כיתות ז'–ח', ערבי ההיכרות והסיורים מיועדים להורים בלבד, ללא ילדים.</p>
-            
-            <h4>הרשמה לכיתה א'</h4>
-            <ul>
-                <li>שני ההורים נדרשים להשתתף בערב היכרות אחד במיתר.</li>
-                <li>במידה ויש רצון להמשיך בתהליך ולהשתתף בהגרלה – לפחות אחד מההורים נדרש להגיע לסיור בוקר במיתר.</li>
-                <li>ההרשמה לסיורים תיפתח לאחר ההשתתפות בערב ההיכרות.</li>
-            </ul>
 
-            <h4>הרשמה לכיתות ב'–ו'</h4>
-            <ul>
-                <li>נדרשת השתתפות של אחד ההורים בערב היכרות אחד.</li>
-                <li>הקבלה מתבצעת על בסיס מקום פנוי.</li>
-                <li>במידה ומתפנה מקום, נערכת הגרלה בין הפונים.</li>
-                <li>משפחה שתעלה בהגרלה תוזמן לפגישה אישית ולסיור במיתר.</li>
-            </ul>
-
-            <h4>הרשמה לכיתות ז'–ח'</h4>
-            <ul>
-                <li>ייערך יום פתוח משותף להורים ולילדים ביום ו', 6.2.</li>
-                <li>ההשתתפות ביום זה מהווה תנאי להשתתפות בהגרלה.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-form" class="modal-container" onclick="handleBackdropClick(event, 'form')">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleModal('form', false)">&times;</span>
-            <h2>הרשמה לערבי היכרות - תשפ"ז</h2>
-            
-            <div class="form-info-box">
-                לפניכם טופס הרשמה המיועד להורים המעוניינים להירשם לערבי הכרות במיתר לשנת תשפ"ז. לאחר השלמת ההרשמה אנחנו ניצור איתכם קשר 🌱
-            </div>
-
-            <form id="meitarFullForm">
-                <div class="form-group"><label>שם משפחה+ שם פרטי הורה 1 <span>*</span></label><input type="text" name="parent1" required></div>
-                <div class="form-group"><label>שם משפחה+ שם פרטי הורה 2</label><input type="text" name="parent2"></div>
-                <div class="form-group"><label>כתובת מייל הורה 1 <span>*</span></label><input type="email" name="email1" required></div>
-                <div class="form-group"><label>כתובת מייל הורה 2 <span></span></label><input type="email" name="email2" required></div>
-                <div class="form-group"><label>מספר טלפון הורה 1 <span>*</span></label><input type="tel" name="phone1" required></div>
-                <div class="form-group"><label>מספר טלפון הורה 2</label><input type="tel" name="phone2"></div>
-                <div class="form-group"><label>כתובת <span>*</span></label><input type="text" name="address1" required></div>
-                <div class="form-group"><label>שם הילד/ה <span>*</span></label><input type="text" name="childName" required></div>
-                
-                <div class="form-group">
-                    <label>לאיזו כיתה אתם מעוניינים להירשם? <span>*</span></label>
-                    <select name="grade" id="gradeSelect" required onchange="handleGradeChange()">
-                        <option value="">בחירה</option>
-                        <option value="א'">עולים לכיתה א'</option>
-                        <option value="ב'-ו'">עולים לכיתה ב' עד ו'</option>
-                        <option value="ז'-ח'">עולים לכיתה ז' עד ח'</option>
-                    </select>
-                </div>
-
-                <div id="field-grade-a" class="form-group conditional-field">
-                    <label>נגיע לערב היכרות לעולים לכתה א' בתאריך: <span>*</span></label>
-                    <select name="dateA">
-                        <option value="">בחירה</option>
-                        <option value="19/1/25">19/1/25 יום ב' בשעה 20:00</option>
-                        <option value="28/1/25">28/1/25 יום ד' בשעה 20:00</option>
-                        <option value="2/2/25">2/2/25 יום ב' בשעה 20:00</option>
-                    </select>
-                </div>
-
-                <div id="field-grade-b-v" class="form-group conditional-field">
-                    <label>נגיע לערב היכרות לעולים לכתה ב'-ו' במיתר: <span>*</span></label>
-                    <select name="dateBtoV">
-                        <option value="">בחירה</option>
-                        <option value="4/2/25">4/2/25 יום ד' בשעה 20:00</option>
-                    </select>
-                </div>
-
-                <div id="field-grade-z-h" class="form-group conditional-field">
-                    <label>נגיע ליום הפתוח לכיתות ז'-ח': <span>*</span></label>
-                    <select name="dateZtoH">
-                        <option value="">בחירה</option>
-                        <option value="6/2/25">6/2/25 יום ו' בשעה 9:00</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>מספר רכב (לצורך כניסה בשער כפר גלים) <span>*</span></label>
-                    <input type="text" name="carNumber" required>
-                </div>
-                
-                <div class="form-group"><label>הערות נוספות</label><textarea name="generalComments" rows="2"></textarea></div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">שלח הרשמה</button>
-            </form>
-        </div>
-    </div>
 
     <script>
         // רשימת התמונות המעודכנת (10 תמונות נבחרות)
@@ -278,38 +183,8 @@
             if(img) img.src = 'images/' + encodeURIComponent(photos[0]); 
         };
 
-        function handleGradeChange() {
-            const grade = document.getElementById('gradeSelect').value;
-            document.querySelectorAll('.conditional-field').forEach(el => el.style.display = 'none');
-            if (grade === "א'") document.getElementById('field-grade-a').style.display = 'block';
-            else if (grade === "ב'-ו'") document.getElementById('field-grade-b-v').style.display = 'block';
-            else if (grade === "ז'-ח'") document.getElementById('field-grade-z-h').style.display = 'block';
-        }
-
         function toggleModal(id, show) { document.getElementById('modal-' + id).style.display = show ? 'flex' : 'none'; }
         function handleBackdropClick(e, id) { if (e.target.id === 'modal-' + id) toggleModal(id, false); }
-
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyldwOdn_6RC5pN1VttTAfpJUVt3cnAQRvIIeuSj8Wi8RtH72wNezOtQegkABxtxRPQ/exec';
-        const form = document.getElementById('meitarFullForm');
-        
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.textContent = 'שולח...';
-            const formData = new URLSearchParams(new FormData(form));
-            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
-            .then(() => {
-                // העברה לדף אישור הרשמה במקום הודעת alert
-                window.location.href = 'reg_confirmation.html';
-                form.reset();
-            })
-            .catch(() => {
-                alert("שגיאה בשליחה.");
-                btn.disabled = false;
-                btn.textContent = 'שלח הרשמה';
-            });
-        });
     </script>
 </body>
 </html>
